@@ -8,7 +8,6 @@ import json.chao.com.wanandroid.core.DataManager;
 /**
  * Base Presenter
  * 管理事件流订阅的生命周期
- *
  * @author quchao
  * @date 2017/11/28
  */
@@ -82,6 +81,4 @@ public class BasePresenter<T extends AbstractView> implements AbstractPresenter<
         }
         compositeDisposable.add(disposable);
     }
-
-
 }

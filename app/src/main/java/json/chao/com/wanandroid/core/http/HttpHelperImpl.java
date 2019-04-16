@@ -3,7 +3,6 @@ package json.chao.com.wanandroid.core.http;
 import java.util.List;
 
 import javax.inject.Inject;
-
 import io.reactivex.Observable;
 import json.chao.com.wanandroid.core.bean.BaseResponse;
 import json.chao.com.wanandroid.core.bean.hierarchy.KnowledgeHierarchyData;
@@ -24,6 +23,12 @@ import json.chao.com.wanandroid.core.http.api.GeeksApis;
  *
  * @author quchao
  * @date 2017/11/27
+ */
+
+/**
+ * 对外隐藏进行网络请求的实现细节
+ * 通过Dagger来将 HttpHelperImpl 注入到需要的地方
+ * HttpHelperImpl 依赖的 GeeksApis 是由 HttpModule 的 provideGeeksApi 提供
  */
 
 public class HttpHelperImpl implements HttpHelper {

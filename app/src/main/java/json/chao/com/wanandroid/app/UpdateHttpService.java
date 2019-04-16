@@ -1,12 +1,8 @@
 package json.chao.com.wanandroid.app;
 
 import android.support.annotation.NonNull;
-
 import com.xuexiang.xupdate.proxy.IUpdateHttpService;
-
 import java.util.Map;
-
-import json.chao.com.wanandroid.core.DataManager;
 
 /**
  * @author quchao

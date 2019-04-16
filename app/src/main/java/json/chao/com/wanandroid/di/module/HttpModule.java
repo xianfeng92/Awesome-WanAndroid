@@ -35,6 +35,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @date 2017/11/27
  */
 
+/**
+ * provideGeeksApi()方法中依赖的 Retrofit 是由 provideGeeksRetrofit() 方法提供
+ * provideGeeksRetrofit方法中依赖的 builder 和 client 是由 provideRetrofitBuilder() 和 provideClient() 提供
+ * provideClient() 方法中的 builder 是由 provideOkHttpBuilder（） 提供
+ *
+ * @WanAndroidUrl 为限定标识符，createRetrofit()和provideGeeksRetrofit()方法返回的都是Retrofit。
+ * 使用 @Qualifier 来给我们所要区分的依赖打上记号，让Dagger2通过记号来获取依赖
+ * @Qualifier 标识符注解其实是在编译期间有用，是作为指引依赖之间的关联而存在的。
+ * 标识符具有对应性，在需要依赖注入的地方有标识，则在提供依赖的地方也一定要有，否则报错。
+ */
+
 @Module
 public class HttpModule {
 

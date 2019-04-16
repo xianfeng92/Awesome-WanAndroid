@@ -36,6 +36,11 @@ public interface AppComponent {
      */
     void inject(WanAndroidApp wanAndroidApp);
 
+
+    /*
+     * 将 AppComponent 中可以提供的依赖暴露出来，以便于其他依赖（dependencies）于 AppComponent 的Component调用
+     * */
+
     /**
      * 提供App的Context
      *

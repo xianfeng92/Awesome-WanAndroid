@@ -1,12 +1,9 @@
 package json.chao.com.wanandroid.presenter.mainpager;
 
 import android.support.annotation.NonNull;
-
 import java.util.HashMap;
 import java.util.List;
-
 import javax.inject.Inject;
-
 import io.reactivex.Observable;
 import json.chao.com.wanandroid.R;
 import json.chao.com.wanandroid.app.Constants;
@@ -78,9 +75,12 @@ public class MainPagerPresenter extends BasePresenter<MainPagerContract.View> im
 
     @Override
     public void loadMainPagerData() {
+        // 构建 Observable 对象
         Observable<BaseResponse<LoginData>> mLoginObservable = mDataManager.getLoginData(getLoginAccount(), getLoginPassword());
         Observable<BaseResponse<List<BannerData>>> mBannerObservable = mDataManager.getBannerData();
         Observable<BaseResponse<FeedArticleListData>> mArticleObservable = mDataManager.getFeedArticleList(0);
+
+        // zip操作符就是合并多个被观察者的数据流， 然后发送(Emit)最终合并的数据
         addSubscribe(Observable.zip(mLoginObservable, mBannerObservable, mArticleObservable, this::createResponseMap)
                 .compose(RxUtils.rxSchedulerHelper())
                 .subscribeWith(new BaseObserver<HashMap<String, Object>>(mView) {
@@ -220,6 +220,5 @@ public class MainPagerPresenter extends BasePresenter<MainPagerContract.View> im
         map.put(Constants.ARTICLE_DATA, feedArticleListResponse);
         return map;
     }
-
 
 }

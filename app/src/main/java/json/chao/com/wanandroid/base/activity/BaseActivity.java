@@ -22,6 +22,11 @@ import json.chao.com.wanandroid.utils.CommonUtils;
  * @date 2017/11/28
  */
 
+/**
+ * BaseActivity 中持有对 Presenter 的引用，其为一个泛型T，在具体类中指定类型
+ * Presenter 是通过依赖注入的 AndroidInjection.inject(this)
+ * Presenter 在 onViewCreated 中持有对 View 的引用，在 onDestroy 中解除对View的引用
+ */
 public abstract class BaseActivity<T extends AbstractPresenter> extends AbstractSimpleActivity implements
         HasSupportFragmentInjector,
         AbstractView {

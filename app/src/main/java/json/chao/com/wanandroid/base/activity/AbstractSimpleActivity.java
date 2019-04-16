@@ -19,6 +19,11 @@ import android.support.test.espresso.IdlingResource;
  * @date 2017/11/28
  */
 
+/**
+ * 关于所有 Activity 的共通处理，如：ButterKnife绑定以及向ActivityCollector中添加创建的Activity
+ * 以及一些方法的执行流程，如 getLayoutId() ---> onViewCreated() --> initToolbar--->initEventAndData
+ */
+
 public abstract class AbstractSimpleActivity extends SupportActivity {
 
     private Unbinder unBinder;
