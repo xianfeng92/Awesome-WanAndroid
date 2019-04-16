@@ -10,15 +10,12 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
-
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import json.chao.com.wanandroid.base.fragment.BaseRootFragment;
 import json.chao.com.wanandroid.component.RxBus;

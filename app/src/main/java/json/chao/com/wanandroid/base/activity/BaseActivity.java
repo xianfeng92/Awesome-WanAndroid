@@ -38,6 +38,7 @@ public abstract class BaseActivity<T extends AbstractPresenter> extends Abstract
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        // 一处声明，处处依赖注入
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
     }
